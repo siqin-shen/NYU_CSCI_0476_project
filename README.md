@@ -24,8 +24,5 @@ My code is to figure out how many trees are in "alive" status and in good health
 	jar -cvf BoroughCounts.jar *.class
 	hadoop jar BoroughCounts.jar BoroughCounts project/output2/part-r-00000 project/output4
 
---6. Download cleaned data to local, rename it as "Cleaned_Dataset", and upload it.
-	hdfs dfs -get project/output2/part-r-00000 /home/ss12083/project_data
-	hdfs dfs -put Cleaned_Dataset project
   
 And the further parts are using Impala to find the count of each property and then find the distribution. Code are attached.
