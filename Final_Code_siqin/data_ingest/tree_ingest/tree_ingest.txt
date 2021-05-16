@@ -1,0 +1,10 @@
+## I used FileZilla instead of SCP to upload local files to HPC.
+
+### Ingest raw data to be cleaned.
+hdfs dfs -put 2015_Street_Tree_Census_-_Tree_Data.csv project
+
+### Download MapReduce Output to local and rename it as Cleaned_Dataset (.txt file)
+hdfs dfs -get project/output2/part-r-00000 /home/ss12083/project_data
+
+### Ingest the cleaned dataset.
+hdfs dfs -put Cleaned_Dataset project
